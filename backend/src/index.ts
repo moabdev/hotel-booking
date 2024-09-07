@@ -1,6 +1,11 @@
 import express, { Response, Request } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
+
+
+mongoose.connect(process.env.MONGO_CONNECTION_STRING as string)
+
 
 const app = express();
 app.use(express.json()); // Converts the body of api request into JSON automatically for us
